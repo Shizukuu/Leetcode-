@@ -52,7 +52,7 @@ public class Solution {
 
 *记得考虑溢出
 
-#知识盲区
+# 知识盲区
 1.IllegalArgumentException
 表明向方法传递了一个不合法或不正确的参数
 2.x%10

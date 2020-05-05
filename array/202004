@@ -1,0 +1,62 @@
+# 200424
+## 26. 删除排序数组中的重复项
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        //如果数组长度为0，返回0.
+        if(nums.length==0) return 0;
+        //使用i，j双指针。j为原来的数组,i是删除重复的数组。
+        int i = 0;
+        for(int j = 1;j<nums.length;j++){
+            //如果j不等于i，i跳到下一位置，把j的值赋值到i上。
+            if(nums[j]!=nums[i]){
+                i++;
+                nums[i]=nums[j];
+            }
+        }
+        //返回新数组。
+        return i+1;
+    }
+}
+
+
+# 200425
+## 1. 两数之和
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[j] == target - nums[i]) {
+                    return new int[] { i, j };
+                }
+            }
+        }
+        throw new IllegalArgumentException("No two sum solution");
+    }
+}
+>IllegalArgumentException：表明向方法传递了一个不合法或不正确的参数
+
+## 7. 整数反转
+public class Solution {
+    public int reverse(int x) {
+        int n = 0;
+        while(x!=0) {
+            if(n<-214748364||n>214748364){
+                return 0;
+            }
+            n=n*10+x%10;
+            x=x/10;
+        }
+        return n;
+    }
+}
+
+*记得考虑溢出
+
+#知识盲区
+1.IllegalArgumentException
+表明向方法传递了一个不合法或不正确的参数
+2.x%10
+x除以10取余数（得到末位数）
+x除以10（得到除了末位数以外其他的位数）
+
+
